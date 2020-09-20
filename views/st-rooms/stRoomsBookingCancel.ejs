@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Email Template</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden
+        }
+
+        body {
+            font-family: "SF Pro Display", "Segoe UI", "Source Sans Pro", Sans-Serif;
+            font-size: 14px;
+            color: #000;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 672px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .w-100 {
+            width: 100%;
+        }
+
+        a {
+            color: #1882FF;
+            text-decoration: none
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .logo {
+            max-width: 174px;
+        }
+
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        table {
+            width: 100%;
+            border: none;
+        }
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4 {
+            line-height: 1.3;
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+        }
+
+        p {
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 24px
+        }
+
+        h3,
+        .h3 {
+            font-size: 16px;
+            margin-bottom: 8px
+        }
+
+        .card-head {
+            background-color: #1882FF;
+            padding: 10.5px 16px;
+            border-radius: 8px 8px 0px 0px;
+            color: #FFFFFF;
+        }
+
+        .card-body {
+            padding: 16px;
+            border: 2px solid #ececec;
+            background-color: #fff;
+            border-radius: 0 0 8px 8px;
+            margin-top: -5px;
+            border-top: none;
+        }
+
+        .card-body table {
+            margin-bottom: 8px;
+        }
+
+        .card-body p {
+            margin-bottom: 16px;
+        }
+
+        .btn-primary {
+            padding: 8px 16px;
+            color: #FFFFFF !important;
+            background-color: #1882FF;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .h-line {
+            width: 100%;
+            border-bottom: 1px solid #F5F5F5;
+        }
+
+        .dotted-h-line {
+            width: 100%;
+            height: 1px;
+            border-bottom: 2px dashed #235FD8;
+        }
+
+        .bs-20 {
+            border-spacing: 20px;
+        }
+
+        .table-spaced {
+            border-spacing: 0;
+            border-radius: 4px
+        }
+
+        .table-spaced thead {
+            color: #4C4C4C;
+            padding: 5px 0
+        }
+
+        .table-spaced tr:nth-child(even) {
+            background-color: #FAFAFA;
+        }
+
+        .table-summary {
+            border-spacing: 0;
+            border-radius: 5px
+        }
+
+        .table th {
+            color: #4c4c4c
+        }
+
+        .table td,
+        .table th {
+            padding: 10px 20px
+        }
+
+        .table-summary tr th:last-child,
+        .table-summary tr td:last-child {
+            text-align: right;
+            vertical-align: bottom
+        }
+
+        @media(max-width: 479px) {
+            .footer {
+                padding: 1.5rem
+            }
+
+            .email-body {
+                padding: 20px 10px;
+            }
+
+            .grid-3 tbody {
+                display: block;
+            }
+
+            .grid-3 tbody tr {
+                display: inline-block;
+                width: 100% !important;
+            }
+
+            .grid-3 tbody tr td {
+                display: inline-block;
+                width: 48% !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <table style="margin-bottom: 32px;">
+        <tr>
+            <td style="text-align: center;">
+                <div class="logo w-100 center mb-2" style="max-width: 174px;"><img
+                        src="https://utility-assets.s3.amazonaws.com/media/assets/full-logo.png" alt=""></div>
+                <h2 style="margin-top: 32px; font-weight: bold;">Booking has been Cancelled!</h2>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <div class="container">
+                    <table>
+                        <% if (receiverName) { %>
+                            <tr>
+                                <td>
+                                    <p>Dear <strong><%= receiverName %>,</strong></p>
+                                </td>
+                            </tr>
+                        <% } %>
+
+                        <tr>
+                            <td>
+                                <p>We’re sorry to inform you that a booking through ST Rooms has been cancelled. The
+                                    cancellation charge will be adjusted as per cancellation policy. Please find the
+                                    booking details below.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="margin-top: 12px;">
+                        <% if(cancellationCharge) { %>
+                        <tr>
+                            <td>
+                                <div class="booking-info" style="margin-bottom: 15px;">
+                                    <p style="font-size: 12px; color: #4c4c4c;">Cancellation Charge</p>
+                                    <p><strong><%= cancellationCharge %></strong></p>
+                                </div>
+                            </td>
+                        </tr>
+                        <% } %>
+                        <tr>
+                            <td>
+                                <div class="booking-info" style="margin-bottom: 15px; margin-top: 6px;">
+                                    <p style="font-size: 12px; color: #4c4c4c;">Cancellation and Change Policy:</p>
+                                    <p>Any cancellation received within 48 hours before arrival is free of charge.
+                                        Failure to arrive at your hotel or property will be treated as No-Show and will
+                                        incur the first 1 night/s charge (Property policy).</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td>
+                                <h3 style="margin: 8px 0;"><strong>Booking Information:</strong></h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table class="grid-3">
+                                    <tr>
+                                        <td style="width: 33%;">
+                                            <div class="booking-info" style="margin-bottom: 15px;">
+                                                <p style="font-size: 12px; color: #4c4c4c;">Booking ID</p>
+                                                <% if(bookingId) { %>
+                                                <p><strong><%= bookingId %></strong></p>
+                                                <% } %>
+                                            </div>
+                                        </td>
+                                        <td style="width: 33%;">
+                                            <div class="booking-info" style="margin-bottom: 15px;">
+                                                <p style="font-size: 12px; color: #4c4c4c;">Customer Name</p>
+                                                <% if(customerName) { %>
+                                                <p><strong><%= customerName %></strong></p>
+                                                <% } %>
+                                            </div>
+                                        </td>
+                                        <td style="width: 33%;">
+                                            <div class="booking-info" style="margin-bottom: 15px;">
+                                                <p style="font-size: 12px; color: #4c4c4c;">Reservation Date</p>
+                                                <% if(reservationDate) { %>
+                                                <p><strong><%= reservationDate %></strong></p>
+                                                <% } %>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 33%;">
+                                            <div class="booking-info" style="margin-bottom: 15px;">
+                                                <p style="font-size: 12px; color: #4c4c4c;">Check In</p>
+                                                <% if(checkIn) { %>
+                                                <p><strong><%= checkIn %></strong></p>
+                                                <% } %>
+                                            </div>
+                                        </td>
+                                        <td style="width: 33%;">
+                                            <div class="booking-info" style="margin-bottom: 15px;">
+                                                <p style="font-size: 12px; color: #4c4c4c;">Check Out</p>
+                                                <p><strong><%= checkout %></strong></p>
+                                            </div>
+                                        </td>
+                                        <td style="width: 33%;">
+                                            <div class="booking-info" style="margin-bottom: 15px;">
+                                                <p style="font-size: 12px; color: #4c4c4c;">Number of Guest(s)</p>
+                                                <% if(numberOfGuest) { %>
+                                                <p><strong><%= numberOfGuest %></strong></p>
+                                                <% } %>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 33%;">
+                                            <div class="booking-info" style="margin-bottom: 15px;">
+                                                <p style="font-size: 12px; color: #4c4c4c;">Number of Room(s)</p>
+                                                <p><strong><%= numberOfRooms %></strong></p>
+                                            </div>
+                                        </td>
+                                        <td style="width: 33%;">
+                                            <div class="booking-info" style="margin-bottom: 15px;">
+                                                <p style="font-size: 12px; color: #4c4c4c;">Total Paid Amount</p>
+                                                <% if(totalPaid) { %>
+                                                <p><strong><%= totalPaid %></strong></p>
+                                                <% } %>
+                                            </div>
+                                        </td>
+                                        <td style="width: 33%;">
+                                            <div class="booking-info" style="margin-bottom: 15px;">
+                                                <p style="font-size: 12px; color: #4c4c4c;">Free Cancellation</p>
+                                                <% if(freeCancellationDate) { %>
+                                                <p><strong><%= freeCancellationDate %></strong></p>
+                                                <% } %>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td>
+                                <div>
+                                    <p style="font-size: 14px;">*Price includes VAT & Tax.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="margin-top: 12px;">
+                        <tr>
+                            <td>
+                                <div>
+                                    <p>Send a mail to <a
+                                            href="mailto:strooms@sharetrip.net"><strong>strooms@sharetrip.net</strong></a>,
+                                        if you need any assistance with your booking. We are just one click away.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td>
+                                <div style="margin-top: 15px;">
+                                    <p style="margin-bottom: 2px;">Thank You</p>
+                                    <p><strong>ShareTrip Team</strong></p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <!-- footer: start -->
+    <table style="margin-top: 32px;">
+        <tr>
+            <td>
+                <div class="footer" style="background-color: #F5F5F5; padding: 48px 15px;">
+                    <div class="footer-component" style="text-align: center; margin-bottom: 16px;">
+                        <h3><strong>Office address:</strong></h3>
+                        <p class="h3">House: 45, Road: 13/C, Block: E, Banani, Dhaka, Bangladesh</p>
+                    </div>
+                    <div class="footer-component" style="text-align: center; margin-bottom: 16px;">
+                        <p class="h3" style="color: #1882FF;"><strong><a
+                                    href="mailto:strooms@sharetrip.net">strooms@sharetrip.net</a> | <a
+                                    href="tel:+8809617617617">+8809617617617</a></strong></p>
+                        <p class="h3">Copyright © 2019 ShareTrip. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+     <!-- footer: End -->
+</body>
+
+</html>
