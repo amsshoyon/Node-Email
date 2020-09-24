@@ -1,0 +1,53 @@
+{% extends "layout/st-rooms.njk" %}
+{% block content %}
+
+    {% set title = "Registration Failed!" %}
+    {% include "modules/st-rooms/header.njk" %}
+
+    <table>
+        <tr>
+            <td>
+                <div class="container">
+                    <!-- Email body: start -->
+                    <!-- ----------------- -->
+
+                    <table>
+                        <tr>
+                            <td>
+                                <p>Dear
+                                    <strong><%= receiverName %>,</strong>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>We’re sorry to inform you that yYour registration to ST Rooms panel has failed. If you are facing any problem please contact us. Our dedicated Team is here to provide fast and reliable solutions.</p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>
+                                <div>
+                                    <p style="margin-top: 14px; margin-bottom: 2px;">
+                                        Thank You
+                                    </p>
+                                    <p>
+                                        <strong>ShareTrip Team</strong>
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- ----------------- -->
+                    <!-- Email body: end -->
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    {% include "modules/st-rooms/footer.njk" %}
+
+{% endblock %}

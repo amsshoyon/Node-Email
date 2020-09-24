@@ -1,0 +1,13 @@
+{
+    "receiverName":"Mr.X",
+    "cancellationCharge":"BDT 1,000",
+    "bookingId":"ST1234567",
+    "customerName":"Khalid Saifullah",
+    "reservationDate":"16 Oct 2020",
+    "checkIn":"26 Oct 2020",
+    "checkout":"29 Oct 2020",
+    "numberOfGuest":"5",
+    "numberOfRooms":"2",
+    "totalPaid":"BDT 72,449 ",
+    "freeCancellationDate":"18 Oct 2020"
+}

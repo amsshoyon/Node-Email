@@ -1,0 +1,128 @@
+{% extends "layout/b2b-flight.njk" %}
+{% block content %}
+
+{% set title = "Partial Payment Request Received" %}
+{% include "modules/b2b-flight/header.njk" %}
+
+<table>
+    <tr>
+        <td>
+            <div class="container">
+                <!-- Email body: start -->
+                <!-- ----------------- -->
+                <table>
+                    <tr>
+                        <td>
+                            <p>Dear <strong>Mr.X.</strong></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>We’ve received the placing partial payment request for booking your flight. We’ll inform
+                                you shortly about the request status. Please find below your booking information in
+                                detail. </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <td>
+                            <h3 style="margin: 8px 0;">Booking Information:</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="grid-3">
+                                <tr>
+                                    <td>
+                                        <div class="booking-info" style="margin-bottom: 15px;">
+                                            <p style="font-size: 12px; color: #4c4c4c;">Booking Code</p>
+                                            <p><strong>STFL73504197</strong></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="booking-info" style="margin-bottom: 15px;">
+                                            <p style="font-size: 12px; color: #4c4c4c;">PNR</p>
+                                            <p><strong>Q1E3R4</strong></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="booking-info" style="margin-bottom: 15px;">
+                                            <p style="font-size: 12px; color: #4c4c4c;">Reference</p>
+                                            <p><strong>PARTIAL-5F3BAA56E7E8E</strong></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="booking-info" style="margin-bottom: 15px;">
+                                            <p style="font-size: 12px; color: #4c4c4c;">Total Amount</p>
+                                            <p><strong>BDT 72,449</strong></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="booking-info" style="margin-bottom: 15px;">
+                                            <p style="font-size: 12px; color: #4c4c4c;">Requested at</p>
+                                            <p><strong>18 Aug 2020</strong></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- card module -->
+                <table>
+                    <thead>
+                        <tr>
+                            <td>
+                                <div class="card-head">
+                                    Terms & Conditions
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="card-body">
+                                    <p>Prepare. Remember to manage your preparation in correlation with the issue at
+                                        hand. Gather all materials and documentation; try to dig deeper within the
+                                        subject to avoid asking questions which were already asked.</p>
+                                    <p> Do due diligence: First, study the client. Specifically, find out who the client
+                                        is (company-wise and, if you know the other person’s name, check the role or
+                                        background of your interlocutor). Read about the company, read documentation –
+                                        conduct some initial desk research. Do not spend too much time on it – an hour
+                                        should be more than enough.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </thead>
+                </table>
+                <!-- card module -->
+
+                <table>
+                    <tr>
+                        <td>
+                            <div style="margin-top: 24px;">
+                                <p>
+                                    For any inconvenience please email us at <span
+                                        style="color: #1882FF;">b2b@sharetrip.net</span>.
+                                </p>
+                                <p style="margin-top: 24px; margin-bottom: 2px;">
+                                    Thank You
+                                </p>
+                                <p><strong>ShareTrip Team</strong></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <!-- ----------------- -->
+                <!-- Email body: end -->
+            </div>
+        </td>
+    </tr>
+</table>
+
+{% include "modules/b2b-flight/footer.njk" %}
+{% endblock %}

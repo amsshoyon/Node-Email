@@ -1,0 +1,165 @@
+{% extends "layout/b2b-flight.njk" %}
+{% block content %}
+
+{% set title = "Partial Payment Request Processed" %}
+{% include "modules/b2b-flight/header.njk" %}
+
+<table>
+    <tr>
+        <td>
+            <div class="container">
+                <!-- Email body: start -->
+                <!-- ----------------- -->
+                <table>
+                    <tr>
+                        <td>
+                            <p>Dear
+                                <strong>Mr.X.</strong>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Thank you for using the booking services from ShareTrip. Please complete your
+                                full payment on time to ensure seamless travel experiences.</p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <td>
+                            <h3 style="margin: 8px 0;">Information:</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="grid-3">
+                                <tr>
+                                    <td colspan="3">
+                                        <div class="booking-info" style="margin-bottom: 15px;">
+                                            <p style="font-size: 12px; color: #4c4c4c;">Customer Details</p>
+                                            <p>
+                                                <strong>Cockpit Travels, Punak Market, Shop-26, Daratana,
+                                                    Jashore.</strong>
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 33%;">
+                                        <div class="booking-info" style="margin-bottom: 15px;">
+                                            <p style="font-size: 12px; color: #4c4c4c;">Booking Code</p>
+                                            <p>
+                                                <strong>STFL73504197</strong>
+                                            </p>
+                                        </div>
+                                    </td>
+                                    <td style="width: 33%;">
+                                        <div class="booking-info" style="margin-bottom: 15px;">
+                                            <p style="font-size: 12px; color: #4c4c4c;">PNR</p>
+                                            <p>
+                                                <strong>Q1E3R4</strong>
+                                            </p>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="table-spaced" border="0" style="font-size: 12px; text-align: left; min-width: 635px;">
+                    <thead style="background-color: #EFEFF4;">
+                        <th>SL
+                        </th>
+                        <th>PNR
+                        </th>
+                        <th>Booking Code
+                        </th>
+                        <th>Total Amount
+                        </th>
+                        <th>Paid Amount
+                        </th>
+                        <th>Due Amount
+                        </th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Q1E3R4</td>
+                            <td>STFL73504197</td>
+                            <td>BDT 72,449</td>
+                            <td>BDT 1,260</td>
+                            <td>BDT 71,189</td>
+                            <td>
+                                <a href="#" class="btn-primary">Play Now</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Q1E3R4</td>
+                            <td>STFL73504197</td>
+                            <td>BDT 72,449</td>
+                            <td>BDT 1,260</td>
+                            <td>BDT 71,189</td>
+                            <td>
+                                <a href="#" class="btn-primary">Play Now</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Q1E3R4</td>
+                            <td>STFL73504197</td>
+                            <td>BDT 72,449</td>
+                            <td>BDT 1,260</td>
+                            <td>BDT 71,189</td>
+                            <td>
+                                <a href="#" class="btn-primary">Play Now</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Q1E3R4</td>
+                            <td>STFL73504197</td>
+                            <td>BDT 72,449</td>
+                            <td>BDT 1,260</td>
+                            <td>BDT 71,189</td>
+                            <td>
+                                <a href="#" class="btn-primary">Play Now</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table>
+                    <tr>
+                        <td>
+                            <div style="margin-top: 24px;">
+                                <p>
+                                    For any inconvenience please email us at
+                                    <span style="color: #1882FF;">b2b@sharetrip.net</span>.
+                                </p>
+                                <p style="margin-top: 24px; margin-bottom: 2px;">
+                                    Thank You
+                                </p>
+                                <p>
+                                    <strong>ShareTrip Team</strong>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- ----------------- -->
+                <!-- Email body: end -->
+            </div>
+        </td>
+    </tr>
+</table>
+
+{% include "modules/b2b-flight/footer.njk" %}
+
+{% endblock %}

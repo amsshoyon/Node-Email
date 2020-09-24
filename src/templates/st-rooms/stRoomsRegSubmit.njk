@@ -1,0 +1,59 @@
+{% extends "layout/st-rooms.njk" %}
+{% block content %}
+
+    {% set title = "Registration Request Received" %}
+    {% include "modules/st-rooms/header.njk" %}
+
+    <table>
+        <tr>
+            <td>
+                <div class="container">
+                    <!-- Email body: start -->
+                    <!-- ----------------- -->
+
+                    <table>
+                        <tr>
+                            <td>
+                                <p>Dear
+                                    <strong><%= receiverName  %>,</strong>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>We’ve received your registration request for ST Rooms Panel. Our dedicated teams are working on it. We’ll inform you shortly about the request status. </p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>
+                                <div style="margin-top: 14px;">
+                                    <p>
+                                        For any inconvenience please email us at 
+                                        <span style="color: #1882FF;">
+                                            <strong><a href="mailto:strooms@sharetrip.net">strooms@sharetrip.net.</a></strong>
+                                        </span>
+                                    </p>
+                                    <p style="margin-top: 24px; margin-bottom: 2px;">
+                                        Thank You
+                                    </p>
+                                    <p>
+                                        <strong>ShareTrip Team</strong>
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- ----------------- -->
+                    <!-- Email body: end -->
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    {% include "modules/st-rooms/footer.njk" %}
+
+{% endblock %}

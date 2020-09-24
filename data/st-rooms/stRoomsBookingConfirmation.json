@@ -1,0 +1,37 @@
+{
+   "receiverName":"Mr.X",
+   "bookingId":"ST1234567",
+   "customerName":"KHALED SAIFULLAH",
+   "reservationDate":"16 Oct 2020",
+   "checkIn":"26 Oct 2020",
+   "checkout":"29 Oct 2020",
+   "numberOfGuest":"5",
+   "numberOfRooms":"2",
+   "freeCancellationDate":"18 Oct 2020",
+   "mealPlan":"lorem 20",
+   "specialRequest":"top floor",
+   "guests":"Lubaba Mannan, Hassan Mazedul, Mannan Lubaba, Mazedul Hassan.",
+   "rooms":[
+      {
+         "roomType":"Deluxe Room",
+         "numberOfRooms":"1",
+         "adult":"2",
+         "child":"0",
+         "extraBed":"0",
+         "duration":"2",
+         "amount":"36,045"
+      },
+      {
+         "roomType":"Super Deluxe Room",
+         "numberOfRooms":"1",
+         "adult":"3",
+         "child":"0",
+         "extraBed":"0",
+         "duration":"2",
+         "amount":"36,045"
+      }
+   ],
+   "totalAmount":"BDT 72,090",
+   "discount":"0",
+   "grandTotalAmount":"BDT 72,090"
+}

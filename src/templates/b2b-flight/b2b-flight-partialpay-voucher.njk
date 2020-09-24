@@ -1,0 +1,162 @@
+{% extends "layout/b2b-flight.njk" %}
+{% block content %}
+
+{% include "modules/b2b-flight/header.njk" %}
+
+<table>
+    <tr>
+        <td>
+            <div class="container">
+                <!-- Email body: start -->
+                <!-- ----------------- -->
+                <table style="margin-bottom: 20px;">
+                    <tr>
+                        <td>
+                            <h2><strong>Invoice</strong></h2>
+                        </td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <td>
+                            <div class="booking-info" style="margin-bottom: 15px;">
+                                <p style="font-size: 12px; color: #4c4c4c;">Customer Details</p>
+                                <p><strong>Cockpit Travels, Punak Market, Shop-26, Daratana, Jashore.</strong></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="grid-3">
+                                <tr>
+                                    <td>
+                                        <div class="booking-info" style="margin-bottom: 15px;">
+                                            <p style="font-size: 12px; color: #4c4c4c;">Booking Code</p>
+                                            <p><strong>STFL73504197</strong></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="booking-info" style="margin-bottom: 15px;">
+                                            <p style="font-size: 12px; color: #4c4c4c;">PNR</p>
+                                            <p><strong>Q1E3R4</strong></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="booking-info" style="margin-bottom: 15px;">
+                                            <p style="font-size: 12px; color: #4c4c4c;">Reference</p>
+                                            <p><strong>PARTIAL-5F3BAA56E7E8E</strong></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="booking-info" style="margin-bottom: 15px;">
+                                            <p style="font-size: 12px; color: #4c4c4c;">Total Amount</p>
+                                            <p><strong>BDT 72,449</strong></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="booking-info" style="margin-bottom: 15px;">
+                                            <p style="font-size: 12px; color: #4c4c4c;">Requested at</p>
+                                            <p><strong>18 Aug 2020</strong></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="booking-info" style="margin-bottom: 15px;">
+                                            <p style="font-size: 12px; color: #4c4c4c;">Requested at</p>
+                                            <p><strong>18 Aug 2020</strong></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="booking-info" style="margin-bottom: 15px;">
+                                            <p style="font-size: 12px; color: #4c4c4c;">Total Amount</p>
+                                            <p><strong>BDT 72,449</strong></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="booking-info" style="margin-bottom: 15px;">
+                                            <p style="font-size: 12px; color: #4c4c4c;">Requested at</p>
+                                            <p><strong>18 Aug 2020</strong></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="booking-info" style="margin-bottom: 15px;">
+                                            <p style="font-size: 12px; color: #4c4c4c;">Requested at</p>
+                                            <p><strong>18 Aug 2020</strong></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="booking-info" style="margin-bottom: 15px;">
+                                            <p style="font-size: 12px; color: #4c4c4c;">Total Amount</p>
+                                            <p><strong>BDT 72,449</strong></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- card module -->
+                <table>
+                    <thead>
+                        <tr>
+                            <td>
+                                <div class="card-head">
+                                    Price Summary
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="card-body" style="padding: 0;">
+                                    <table style="border-spacing: 15px;">
+                                        <tr>
+                                            <td style="text-align: left; font-size: 12px;">
+                                                Total Amount
+                                            </td>
+                                            <td style="text-align: right; font-size: 12px;">
+                                                <strong>BDT 72,449</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left; font-size: 12px;">
+                                                Partial Payment
+                                            </td>
+                                            <td style="text-align: right; font-size: 12px;">
+                                                <strong>-1,260</strong>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div class="h-line"></div>
+                                    <table style="border-spacing: 15px;">
+                                        <tr>
+                                            <td style="text-align: left; font-size: 14px;">
+                                                <strong>Due Amount</strong>
+                                            </td>
+                                            <td style="text-align: right; font-size: 12px;">
+                                                <strong>BDT 71,189</strong>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </thead>
+                </table>
+                <!-- card module -->
+
+                {% include 'modules/b2b-flight/contact-footer.njk'%}
+                <!-- ----------------- -->
+                <!-- Email body: end -->
+            </div>
+        </td>
+    </tr>
+</table>
+
+{% endblock %}}
