@@ -7,6 +7,7 @@ const ejs = require('ejs');
 // Getting routes
 const indexRoutes = require('./routes/index');
 const stRoomsRoutes = require('./routes/stRooms');
+const b2bRoutes = require('./routes/b2bFlight');
 
 app.set('view engine', 'ejs');
 
@@ -28,6 +29,7 @@ app.use((req, res, next) => {
 
 // Route Middleware
 app.use('/st-rooms', stRoomsRoutes);
+app.use('/b2b-flight', b2bRoutes);
 app.use('/', indexRoutes);
 
 // Error Handelling
