@@ -159,11 +159,11 @@
                                         <td><%= data.roomType %></td>
                                         <td><%= data.numberOfRooms %></td>
                                         <td>
-                                            <% if (data.adt) { %> <%= data.adt %> <%} else { %> 0 <% } %>
-                                            Adt(s),
+                                            <% if (data.adult) { %> <%= data.adult %> <%} else { %> 0 <% } %>
+                                            adult(s),
 
-                                            <% if (data.chd) { %> <%= data.chd %> <%} else { %> 0 <% } %>
-                                            Chd(s)
+                                            <% if (data.child) { %> <%= data.child %> <%} else { %> 0 <% } %>
+                                            child(s)
                                         </td>
                                         <td><%= data.extraBed %></td>
                                     </tr>

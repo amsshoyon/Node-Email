@@ -1,9 +1,10 @@
 const gulp = require('gulp');
 const { src, dest, watch, series, parallel } = require('gulp');
 const ext_replace = require('gulp-ext-replace');
-const minifyHTML = require('gulp-minify-html');
+const minifyHTML = require('gulp-htmlmin');
 const inlineCss = require('gulp-inline-css');
 const nunjucksRender = require('gulp-nunjucks-render');
+const clean = require('gulp-clean');
 
 const files = {
     njkPath: 'src/**/*.+(html|nunjucks|njk)',
@@ -25,19 +26,44 @@ function watchTask() {
     );
 }
 
+function build() {
+    return src('views/**/*.ejs')
+        .pipe(ext_replace('.html'))
+        .pipe(inlineCss())
+        .pipe(minifyHTML({ 
+            collapseWhitespace: true,
+            caseSensitive: true,
+            minifyCSS: true,
+            removeComments: true
+        }))
+        .pipe(dest('dist'));
+}
+
+function cleanDist() {
+    return src('./dist', { read: false, allowEmpty: true})
+    .pipe(clean());
+}
+
+function cleanViews() {
+    return src('./views', { read: false, allowEmpty: true })
+    .pipe(clean());
+}
+
 exports.default = series(
     ejsTask,
     watchTask
 );
 
-// ====================================
+exports.build = series(
+    cleanDist,
+    cleanViews,
+    ejsTask,
+    build
+);
 
-gulp.task('build', function() {
-    return src('views/**/*.ejs')
-        .pipe(ext_replace('.html'))
-        // .pipe(minifyHTML({
-        //     comments:true,
-        //     spare:false
-        // }))
-        .pipe(dest('dist'));
-});
+exports.clean = series(
+    cleanDist,
+    cleanViews
+);
+
+// ====================================
