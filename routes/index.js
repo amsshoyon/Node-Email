@@ -10,49 +10,39 @@ router.get('/', (req, res, next) => {
     res.render('index.ejs');
 });
 
-router.get('/email', (req, res, next) => {
-    var filesArr = [];
-    fs.readdir(directoryPath, function (err, files) {
-        if (err) {
-            return console.log('Unable to scan directory: ' + err);
-        } 
-        files.forEach(function (file) {
-            filesArr.push({
-                'template': file
-            })
-        });
-        var data = {
-            files: filesArr
-        };
-        res.render('email.ejs', data);
-    });
-});
-
-router.get('/build/st-rooms', (req, res, next) => {
-
-    var filePath = req.url.replace('/build/','');
-    var directoryPath = 'views/'+filePath+'/templates';
-    var destPath = 'dist/st-rooms';
+router.get('/create/:slug', (req, res, next) => {
+    
+    var directoryPath = 'views/'+req.params.slug;
+    var templatesArr = []; 
 
     fs.readdir(directoryPath, function (err, files) {
-
         if (err) {
             return console.log('Unable to scan directory: ' + err);
         }
 
         files.forEach(function (file) {
-
-            var htmlName = file.replace('.ejs','.html');
-            var template = fs.readFileSync("views/"+filePath+"/templates/"+file, 'utf-8');
-            var html     = ejs.render ( template );
-
-            fs.writeFileSync("./dist/"+htmlName, html, 'utf8');
-
+            var name =  file.replace(".ejs", '');
+            templatesArr.push({
+                file: directoryPath+'/'+file,
+                name: name
+            });
         });
-
-        console.log('ok');
+        
+        data = {
+            dir: directoryPath,
+            templates: templatesArr
+        }
+        res.render('email.ejs', data);
     });
+});
 
+router.post('/getData', (req, res, next) => {
+    var template = req.body.template;
+    var jsonFile = template.replace('views/', '').replace('.ejs', '');
+
+    jsonFile = '../data/'+jsonFile+'.json';
+    let json = require(jsonFile);
+    res.json(json);
 });
 
 module.exports = router;

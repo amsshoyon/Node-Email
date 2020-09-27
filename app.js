@@ -6,6 +6,7 @@ const ejs = require('ejs');
 
 // Getting routes
 const indexRoutes = require('./routes/index');
+const sendmail = require('./routes/sendmail');
 const stRoomsRoutes = require('./routes/stRooms');
 const b2bRoutes = require('./routes/b2bFlight');
 
@@ -31,6 +32,7 @@ app.use((req, res, next) => {
 app.use('/st-rooms', stRoomsRoutes);
 app.use('/b2b-flight', b2bRoutes);
 app.use('/', indexRoutes);
+app.use('/mail', sendmail);
 
 // Error Handelling
 app.use((req, res, next) => {
