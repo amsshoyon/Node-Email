@@ -8,8 +8,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.3.45/css/materialdesignicons.min.css"/>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.3.5/sweetalert2.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.3.5/sweetalert2.min.js" ></script>
+
 </head>
 <body>
+    <header class="bg-dark p-3 text-center text-white sticky-top" style="z-index: 1;">
+        <h2>Test sending email</h2>
+        <a href="/" class="btn btn-sm btn-primary mt-2">Email Templates</a>
+    </header>
     <div class="container-fluid mt-5">
         <div class="row d-flex justify-content-center">
             <div class="col-md-5">
@@ -72,6 +79,12 @@
                 </div>
             </div>
         </div>
+        <div class="row mt-5">
+            <div class="preview-email w-100">
+
+            </div>
+
+        </div>
     </div>
 
 
@@ -109,7 +122,20 @@
                 type: "post",
                 data:  form.serialize(),
                 success: function(res) {
-                    alert(res)
+                    res = JSON.parse(res);
+                    var formattedData = JSON.stringify(res.info, null, 3);
+                    $('.preview-email').html(res.template);
+                    $('body, html').animate({
+                        scrollTop: $(".preview-email").offset().top
+                    }, 600);
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: res.message,
+                        html: '<div style="white-space: pre-line; text-align: left; font-family: monospace;">'+formattedData+'</div>',
+                        showConfirmButton: true
+                    })
+
                 }
             });
         })

@@ -26,14 +26,7 @@ transporter.verify((error, success) => {
 })
 
 const mailer = message => {
-    transporter.sendMail(message, (err, info) => {
-        if(err) {
-            // return console.log('Error: '+err)
-            return err;
-        }else{
-            console.log('Email sent: ', info)
-        }
-    })
+    return transporter.sendMail(message);
 }
 
 module.exports = mailer

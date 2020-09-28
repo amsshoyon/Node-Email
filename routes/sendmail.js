@@ -9,12 +9,12 @@ let emailTemplate;
 
 const router = express.Router();
 
-router.post('/', (req, res, next) => {
+router.post('/', async (req, res, next) => {
     
      var data = JSON.parse(req.body.data);
     
      ejs.renderFile(req.body.template, data)
-        .then(result => {
+        .then(async (result) => {
             emailTemplate = result;
 
             const message = {
@@ -23,7 +23,13 @@ router.post('/', (req, res, next) => {
                 html: emailTemplate
             }
 
-            mailer(message)
+            const mail = await mailer(message)
+            res.json({
+                'status': 'Success',
+                'message': 'Mail has sent.',
+                'info': mail,
+                'template': emailTemplate
+            });
         })
         .catch(err => {
             res
