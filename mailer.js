@@ -13,11 +13,11 @@ const transporter = nodemailer.createTransport({
     }
 }, {from: `Mailer Test <${process.env.EMAIL}>`})
 
-transporter.verify((error, success) => {
+transporter.verify((error, success) => { 
     if (error) 
         return console.log(error)
-    console.log('Server is ready to take our messages: ', success)
-    transporter.on('token', token => {
+        console.log('Server is ready to take our messages: ', success)
+        transporter.on('token', token => {
         console.log('A new access token was generated')
         console.log('User: %s', token.user)
         console.log('Access Token: %s', token.accessToken)
@@ -27,9 +27,12 @@ transporter.verify((error, success) => {
 
 const mailer = message => {
     transporter.sendMail(message, (err, info) => {
-        if (err) 
-            return console.log(err)
-        console.log('Email sent: ', info)
+        if(err) {
+            // return console.log('Error: '+err)
+            return err;
+        }else{
+            console.log('Email sent: ', info)
+        }
     })
 }
 

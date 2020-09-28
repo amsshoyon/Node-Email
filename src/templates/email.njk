@@ -8,25 +8,17 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.3.45/css/materialdesignicons.min.css"/>
 
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>
-      tinymce.init({
-        selector: '#josn-data',
-        pre: true,
-        code: true
-      });
-    </script>
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container-fluid mt-5">
         <div class="row d-flex justify-content-center">
-            <div class="col-md-9">
-                <div class="card">
+            <div class="col-md-5">
+                <div class="card" style="height: 100%">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h3>Create Mail</h3>
+                        <h4>Create Mail</h4>
                     </div>
                     <div class="card-body">
-                        <form action="/mail" method="POST">
+                        <form action="/mail" method="POST" id="emailForm">
                             <div class="row">
 
                                 <div class="col-md-6">
@@ -69,8 +61,15 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="data-show" style="white-space: pre; font-family: monospace;"></div>
+            <div class="col-md-4">
+                <div class="card" style="height: 100%">
+                    <div class="card-header">
+                        <h4>Json Preview</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="data-show" style="white-space: pre-line; font-family: monospace;"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -96,7 +95,21 @@
 
                   $('.data-show').text(formattedData);
 
-                  tinymce.get('josn-data').setContent(formattedData); 
+                  $('#josn-data').val(formattedData); 
+                }
+            });
+        })
+
+        $('#emailForm').on('submit', function(e){
+            e.preventDefault();
+            var form = $(this);
+
+            $.ajax({
+                url: "/mail",
+                type: "post",
+                data:  form.serialize(),
+                success: function(res) {
+                    alert(res)
                 }
             });
         })

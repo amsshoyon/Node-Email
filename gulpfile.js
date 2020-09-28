@@ -29,7 +29,10 @@ function watchTask() {
 function build() {
     return src('views/**/*.ejs')
         .pipe(ext_replace('.html'))
-        .pipe(inlineCss())
+        .pipe(inlineCss({
+            applyLinkTags: false,
+            removeLinkTags: false
+        }))
         .pipe(minifyHTML({ 
             collapseWhitespace: true,
             caseSensitive: true,

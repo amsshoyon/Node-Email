@@ -16,16 +16,14 @@ router.post('/', (req, res, next) => {
      ejs.renderFile(req.body.template, data)
         .then(result => {
             emailTemplate = result;
-            
-            res.send(emailTemplate);
 
             const message = {
                 to: req.body.to,
                 subject: req.body.subject,
                 html: emailTemplate
             }
-            mailer(message)
 
+            mailer(message)
         })
         .catch(err => {
             res
